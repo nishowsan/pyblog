@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogs</title>
+    {% include 'extender-link.html' %}
+</head>
+<body>
+    {% include 'extender-nav.html' %}
+    <br><br><br>
+    <div class="container">
+        {% for blog in all_blog %}
+          <div class="col s12 m7">
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="{{ blog.picture.url }}"
+                    width="100px;" height="160px;">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p>{{ blog.header }}</p>
+                </div>
+                <div class="card-action">
+                  <a href="{{ blog.id }}" class="waves-effect waves-light btn">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    <br><br><br>
+    <br><br><br>
+    {% include 'extender-footer.html' %}
+</body>
+</html>
